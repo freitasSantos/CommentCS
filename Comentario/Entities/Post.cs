@@ -28,11 +28,15 @@ namespace Comentario.Entities {
         }
 
         public override string ToString() {
-            return Title + "\n" +
-                   Likes + " Likes - " + Momment.ToString("DD/MM/YYYY HH:MM:SS") + "\n" +
+            string msg = "";
+            msg += Title + "\n" +
+                   Likes + " Likes - " + Momment + "\n" +
                    Content + "\n" +
                    "Comments:\n";
-                   //foreach(Comment obj in Comments)
+            foreach(Comment obj in Comments) {
+                msg += obj.Text + "\n"; 
+            }
+            return msg;       
 
         }
     }
